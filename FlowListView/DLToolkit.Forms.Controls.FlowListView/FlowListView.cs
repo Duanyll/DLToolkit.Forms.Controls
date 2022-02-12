@@ -388,15 +388,15 @@ namespace DLToolkit.Forms.Controls
         /// <summary>
         /// FlowItemsSourceProperty.
         /// </summary>
-        public static BindableProperty FlowItemsSourceProperty = BindableProperty.Create(nameof(FlowItemsSource), typeof(ICollection), typeof(FlowListView), default(ICollection));
+        public static BindableProperty FlowItemsSourceProperty = BindableProperty.Create(nameof(FlowItemsSource), typeof(IReadOnlyCollection<object>), typeof(FlowListView), default(IReadOnlyCollection<object>));
 
         /// <summary>
         /// Gets FlowListView items source.
         /// </summary>
         /// <value>FlowListView items source.</value>
-        public ICollection FlowItemsSource
+        public IReadOnlyCollection<object> FlowItemsSource
         {
-            get { return (IList)GetValue(FlowItemsSourceProperty); }
+            get { return (IReadOnlyCollection<object>)GetValue(FlowItemsSourceProperty); }
             set { SetValue(FlowItemsSourceProperty, value); }
         }
 
